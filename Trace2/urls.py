@@ -52,6 +52,7 @@ urlpatterns = [
     url(r'^Sell/',include('Sell.urls')),
 # 指向Sell2的urls文件
     url(r'^Sell2/',include('Sell2.urls')),
+    url(r'^process/', include('process.urls'))
     # 未指定路径，匹配TestSell的url
     # url(r'^',include('TestSell.urls')),
 ]
