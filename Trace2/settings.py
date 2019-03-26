@@ -25,7 +25,7 @@ SECRET_KEY = 'yv%_1zu2n$_&&8$)da8d^i5@1vp20bqa4z^-1znn5#9yc^h24$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['223.3.79.119','localhost','127.0.0.1',]
+ALLOWED_HOSTS = ['223.3.66.242','localhost']
 
 
 # Application definition
@@ -37,10 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Total',
-    'TestSell',
-    'Sell',
-    'Sell2',
+    'app',
 
 ]
 
@@ -89,8 +86,6 @@ DATABASES = {
         'PORT':'3306'
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
