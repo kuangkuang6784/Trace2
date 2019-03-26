@@ -14,11 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-#from django.urls import path
+from django.contrib import admin
 from django.conf.urls import url
-from django.conf.urls import include
-#from Total import views
-#from TestSell import views
+from app import views
 
 '''
     url(r'^trans_submit',views.list),
@@ -29,17 +27,13 @@ from django.conf.urls import include
 
 '''
 urlpatterns = [
-    #submit其实就是将数据提交到管理子系统，涉及到数据库的添加,submit提交的是post请求
-    url(r'^product/submit',views.product_submit),
-    #inquiry提交的是get请求
-    url(r'^product/inquiry/$',views.product_inquiry),#这里的$是一个通配符
-    #path('admin/', admin.site.urls),
-    # 销售人员相关
-    # 增加销售人员信息
-    url(r'^add_seller',views.add_seller),
-    # 查询销售人员信息
-    url(r'^inquiry_seller/$',views.inquiry_seller),
-    
+    #信息核对
+    url(r'^Transport/ProductInfoVerify/$', views.product_inquiry),
+    # 运输数据填写
+    #url(r'^Transport/dataShow/$', views.trans_info_show),
+    url(r'^Transport/dataWrite2', views.data_write2),
+    url(r'^Transport/dataWrite', views.data_write),
+
 ]
 '''
 urlpatterns = [
