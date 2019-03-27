@@ -9,7 +9,7 @@ import django.utils.timezone as timezone
 
 # 消费者注册表
 class ConsumerRegistry(models.Model):
-    ConsumerId = models.CharField(max_length=15,unique=True,null=True,blank=True)   # 消费者注册ID
+    ConsumerId = models.CharField(max_length=10,unique=True,null=True,blank=True)   # 消费者注册ID
     ConsumerName = models.CharField(max_length=10,null=True,blank=True)             # 姓名
     # ContactNo = models.IntegerField()
     ContactNo = models.CharField(max_length=11)                                     # 联系方式
@@ -57,17 +57,18 @@ class SellerRegistry(ConsumerRegistry):
 
 class SellData(models.Model):
     # SellID = models.BigIntegerField()                       #销售编号(销售点编号+销售/生产内容编号+销售点顺序号)
-    SellID = models.CharField(max_length=20,unique=True,null=True,blank=True)  # 销售编号(销售点编号+销售/生产内容编号+销售点顺序号)
+    # SellID = models.CharField(max_length=30,unique=True,null=True,blank=True)  # 销售编号(销售点编号+销售/生产内容编号+销售点顺序号)
     # ProductionID = models.BigIntegerField()                 #生产内容ID/生产内容再加工ID(销售内容ID)
-    ProductionID = models.CharField(max_length=20,null=True,blank=True)  # 生产内容ID/生产内容再加工ID(销售内容ID)
-    SellLocation = models.CharField(max_length=50,null=True,blank=True)  # 销售地
+    ProductionID = models.CharField(max_length=30,null=True,blank=True)  # 生产内容ID/生产内容再加工ID(销售内容ID)
+    # SellLocation = models.CharField(max_length=50,null=True,blank=True)  # 销售地
     SPReceiveTime = models.DateTimeField()  # 销售点接收时间
     SPSelloutTime = models.DateTimeField(null=True,blank=True)  # 销售点售出时间(为空则未销售)
     Price = models.IntegerField()  # 销售价格(避免销售点恶意抬价)
     APApprovalRes = models.IntegerField(default=0)  # 被溯源次数
     AccountabilityFlag = models.IntegerField(default=0)  # 追责标志位
     SellUCLLink = models.CharField(max_length=100,null=True,blank=True)  # 销售UCL索引
-    SellName = models.CharField(max_length=50,null=True,blank=True)      #商品名称
+    GoodsName = models.CharField(max_length=50,null=True,blank=True)      #商品名称
+    ConsumerID = models.CharField(max_length=10,unique=True,null=True,blank=True)   # 销售员ID
 
     def __str__(self):  # print的时候好看，类似于C++的重载<<
         return self.SellID
@@ -81,7 +82,7 @@ class SellData(models.Model):
 
 class CompanyRegistry(models.Model):
     # CompanyID = models.IntegerField()                         #企业注册ID(企业唯一标识)
-    CompanyID = models.CharField(max_length=20)                 # 企业注册ID(企业唯一标识)
+    CompanyID = models.CharField(max_length=7)                  # 企业注册ID(企业唯一标识)
     CompanyName = models.CharField(max_length=50)               # 企业名称
     # CorporateIDNo = models.BigIntegerField()                #企业法人身份证号
     CorporateIDNo = models.CharField(max_length=20)             # 企业法人身份证号
