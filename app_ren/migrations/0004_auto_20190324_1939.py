@@ -8,7 +8,7 @@ from django.db import migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('app', '0003_trance_produce_transportdata'),
+        ('app_ren', '0003_trance_produce_transportdata'),
     ]
 
     operations = [

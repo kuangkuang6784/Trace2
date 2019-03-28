@@ -1,6 +1,6 @@
 from __future__ import unicode_literals
 from django.shortcuts import HttpResponse, render, redirect
-from app import models
+from app_ren import models
 
 from django.shortcuts import render_to_response
 from django.template import Context
