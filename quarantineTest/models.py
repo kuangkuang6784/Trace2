@@ -11,6 +11,7 @@ from datetime import datetime
     
     migrations文件夹只保留__init__.py
     delete from django_migrations where app_ren= "account";
+    delete from django_migrations where app= "account";
     重新同步
 '''
 
