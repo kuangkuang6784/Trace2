@@ -25,7 +25,7 @@ SECRET_KEY = 'yv%_1zu2n$_&&8$)da8d^i5@1vp20bqa4z^-1znn5#9yc^h24$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['223.3.66.242','localhost']
+ALLOWED_HOSTS = ['223.3.66.242', '223.3.95.218', 'localhost']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
+    'quarantineTest',
 
 ]
 
